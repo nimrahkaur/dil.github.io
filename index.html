@@ -4,8 +4,8 @@ layout: default
 {% for log in site.posts %}
 {% assign body = log.content | strip %}
 <article class="log">
-  <h2 class="log-title"><a href="{{ log.url | relative_url }}">{{ log.title | escape }}</a></h2>
   <time class="date" datetime="{{ log.date | date: '%Y-%m-%d' }}">{{ log.date | date: "%B %-d, %Y" }}</time>
+  <h2 class="log-title"><a href="{{ log.url | relative_url }}">{{ log.title | escape }}</a></h2>
   {% if body != "" %}<div class="prose">{{ log.content }}</div>{% endif %}
 </article>
 {% endfor %}

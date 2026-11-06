@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign body = content | strip %}
 <article class="log">
-  <h1 class="log-title">{{ page.title | escape }}</h1>
   <time class="date" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  <h1 class="log-title">{{ page.title | escape }}</h1>
   {% if body != "" %}<div class="prose">{{ content }}</div>{% endif %}
 </article>
