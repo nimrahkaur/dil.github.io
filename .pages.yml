@@ -1,0 +1,23 @@
+# Settings for Pages CMS, the web editor at https://app.pagescms.org
+media:
+  input: images
+  output: /dil.github.io/images
+  categories: [image]
+
+content:
+  - name: logs
+    label: Logs
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: body
+        label: Log
+        type: rich-text
+        format: markdown
