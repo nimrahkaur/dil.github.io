@@ -14,6 +14,6 @@ title: Some title
 Whatever is on your mind.
 ```
 
-Commit it to `main`, and it appears on the site within a minute or two. The newest log shows first.
+Commit it to `main`, and it appears on the site within a minute or two. The newest log fills the home page, and older ones are listed below it.
 
 You can do this from github.com: open `_posts/`, then choose **Add file > Create new file**.

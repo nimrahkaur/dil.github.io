@@ -1,12 +1,9 @@
 ---
 layout: default
 ---
-<article class="log">
-  <time class="log-date" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-  <div class="log-body">
-    <h1 class="log-title">{{ page.title | escape }}</h1>
-    <div class="prose">
-      {{ content }}
-    </div>
-  </div>
+{% assign body = content | strip %}
+<article class="feature">
+  <time class="date" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  <h1 class="headline{% if page.title.size > 24 %} headline-long{% endif %}">{{ page.title | escape }}</h1>
+  {% if body != "" %}<div class="prose">{{ content }}</div>{% endif %}
 </article>
