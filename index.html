@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% for log in site.posts %}
+<article class="log">
+  <time class="log-date" datetime="{{ log.date | date: '%Y-%m-%d' }}">{{ log.date | date: "%b %-d, %Y" }}</time>
+  <div class="log-body">
+    <h2 class="log-title"><a href="{{ log.url | relative_url }}">{{ log.title | escape }}</a></h2>
+    <div class="prose">
+      {{ log.content }}
+    </div>
+  </div>
+</article>
+{% endfor %}
