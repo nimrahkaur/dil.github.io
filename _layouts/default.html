@@ -6,15 +6,21 @@
   <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
   {% assign description = page.excerpt | strip_html | normalize_whitespace | strip %}
   <meta name="description" content="{% if description != "" %}{{ description | truncate: 160 | escape }}{% else %}{{ site.description | escape }}{% endif %}">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23888'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23e8401c'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300&display=swap">
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
-  <header class="site-header">
-    <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
-  </header>
-  <main>
-    {{ content }}
-  </main>
+  <div class="page">
+    <header class="sidebar">
+      <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+      <p class="tagline">{{ site.description | escape }}</p>
+    </header>
+    <main class="content">
+      {{ content }}
+    </main>
+  </div>
 </body>
 </html>

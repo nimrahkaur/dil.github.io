@@ -1,25 +1,11 @@
 ---
 layout: default
 ---
-{% assign latest = site.posts.first %}
-{% if latest %}
-{% assign body = latest.content | strip %}
-<article class="feature">
-  <time class="date" datetime="{{ latest.date | date: '%Y-%m-%d' }}">{{ latest.date | date: "%B %-d, %Y" }}</time>
-  <h1 class="headline{% if latest.title.size > 24 %} headline-long{% endif %}"><a href="{{ latest.url | relative_url }}">{{ latest.title | escape }}</a></h1>
-  {% if body != "" %}<div class="prose">{{ latest.content }}</div>{% endif %}
+{% for log in site.posts %}
+{% assign body = log.content | strip %}
+<article class="log">
+  <h2 class="log-title"><a href="{{ log.url | relative_url }}">{{ log.title | escape }}</a></h2>
+  <time class="date" datetime="{{ log.date | date: '%Y-%m-%d' }}">{{ log.date | date: "%B %-d, %Y" }}</time>
+  {% if body != "" %}<div class="prose">{{ log.content }}</div>{% endif %}
 </article>
-{% endif %}
-
-{% if site.posts.size > 1 %}
-<ol class="log-list">
-  {% for log in site.posts offset: 1 %}
-  <li>
-    <a href="{{ log.url | relative_url }}">
-      <span class="log-list-title">{{ log.title | escape }}</span>
-      <time class="date" datetime="{{ log.date | date: '%Y-%m-%d' }}">{{ log.date | date: "%b %-d, %Y" }}</time>
-    </a>
-  </li>
-  {% endfor %}
-</ol>
-{% endif %}
+{% endfor %}
