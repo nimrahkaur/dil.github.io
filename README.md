@@ -4,7 +4,7 @@ My logs, live at <https://nimrahkaur.github.io/dil.github.io/>.
 
 ## Post a log
 
-The easy way: go to <https://app.pagescms.org>, open this repo, choose **Logs**, then add a log. Drag in pictures as you write, and save. It appears on the site within a minute or two.
+The easy way: go to <https://app.pagescms.org>, open this repo, choose **Logs**, then add a log. Add pictures as you write, and save. It appears on the site within a minute or two.
 
 To add one by hand instead:
 
