@@ -1,0 +1,19 @@
+title: dil
+description: Random logs.
+
+# Where the site lives. If this repo is ever renamed to nimrahkaur.github.io,
+# set baseurl to "" and the site moves to https://nimrahkaur.github.io/.
+url: https://nimrahkaur.github.io
+baseurl: /dil.github.io
+
+permalink: pretty
+markdown: kramdown
+
+exclude:
+  - README.md
+
+defaults:
+  - scope:
+      type: posts
+    values:
+      layout: log

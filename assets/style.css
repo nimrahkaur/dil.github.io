@@ -1,0 +1,214 @@
+:root {
+  color-scheme: light dark;
+  --paper: #fafaf8;
+  --ink: #1b1b19;
+  --muted: #6d6d68;
+  --rule: #e6e5e0;
+  --wash: #f1f0ec;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #141413;
+    --ink: #ecece8;
+    --muted: #9c9c96;
+    --rule: #2b2b28;
+    --wash: #1f1f1d;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 0 1.5rem 6rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--muted);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Header */
+
+.site-header {
+  padding: 3.5rem 0 4.5rem;
+}
+
+.wordmark {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+/* Logs: the date sits in its own column, like an entry in a logbook */
+
+.log {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  column-gap: 1.5rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.log-date {
+  padding-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.log-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.log-title a {
+  text-decoration: none;
+}
+
+.log-title a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+@media (max-width: 40rem) {
+  .site-header {
+    padding: 2rem 0 2.5rem;
+  }
+
+  .log {
+    display: block;
+    padding: 2rem 0;
+  }
+
+  .log-date {
+    display: block;
+    margin-bottom: 0.5rem;
+    padding-top: 0;
+  }
+}
+
+/* Log contents */
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote,
+.prose pre,
+.prose table {
+  margin: 0 0 1.1em;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin: 1.8em 0 0.5em;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25em;
+}
+
+.prose li + li {
+  margin-top: 0.25em;
+}
+
+.prose blockquote {
+  padding-left: 1em;
+  border-left: 2px solid var(--rule);
+  color: var(--muted);
+}
+
+.prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.prose hr {
+  margin: 2em 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.prose code {
+  font: 0.875em/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  background: var(--wash);
+}
+
+.prose pre {
+  overflow-x: auto;
+  padding: 1em 1.1em;
+  border-radius: 6px;
+  background: var(--wash);
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+}
+
+.prose div.highlighter-rouge,
+.prose figure.highlight {
+  margin: 0;
+}
+
+.prose table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.4em 1em 0.4em 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+}
